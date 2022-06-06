@@ -1,0 +1,27 @@
+---
+layout: index
+---
+{% comment %}Post Template{% endcomment %}
+{% comment %}<h2>{{ title }}</h2>{% endcomment %}
+{% comment %}<p><i>Writen at: {{ date | date: "%b %d, %Y" }}</i></p>{% endcomment %}
+{% comment %}{{ content }}{% endcomment %}
+
+<section class="page-layout">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="content mt-5">
+          <h1 class="title">{{ title }}</h1>
+          <p class="subtitle is-6">
+            Published on: <time datetime="{{ date }}">{{ date }}</time>
+              {% comment %}<p><i>Writen at: {{ date | date: "%b %d, %Y" }}</i></p>{% endcomment %}
+          </p>
+          {{ content }}
+        </article>
+        <footer class="card-footer">
+          <a href="/" class="button is-centered is-link card-footer-item post-home">Home</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+</section>

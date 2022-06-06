@@ -1,0 +1,46 @@
+---
+title: Eleventy template languages
+layout: index
+---
+
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      {% comment %}<h1 class="title">{{ site.title }}</h1>{% endcomment %}
+      <h2 class="subtitle">{{ site.description }}</h2>
+      <h3>Which Eleventy template languages does exist?</h3>
+    </div>
+  </div>
+</section>
+
+
+<section class="postlist mt-3 pt-3">
+  <div class="container">
+    <h2 class="title has-text-centered mt-3 mb-6">Recent posts</h2>
+    <div class="columns">
+      {% assign posts = collections.posts | reverse %}
+      {% for post in posts %}
+          <div class="column">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  {{ post.data.title }}
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  {{ post.data.description }}
+                </div>
+              </div>
+              <footer class="card-footer">
+                <a href="{{ post.url }}" class="button is-fullwidth is-link card-footer-item">Read article</a>
+              </footer>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<hr />
+<footer>{{ site.copy }}</footer>
